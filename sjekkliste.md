@@ -72,8 +72,8 @@
   - Sjekk at det er ordentlig av: la vannet stå på i kjøkkenkranen – det skal slutte å renne. Skru av kjøkkenkranen igjen rett før vannet har stoppet.
 - [ ] **Koble til alle kameraene** igjen.
 - [ ] **Sett alle veggmonterte ovner manuelt til 5 °C.**
-- [ ] **Sett gulvvarmen på badene tilbake til 10 °C** (minimumstemperatur).
-- [ ] **Sett pappkartonger foran vinduene i treningsrommet** (midlertidig, til vi får rullgardiner).
+- [ ] **Sett gulvvarmen på badene tilbake til 10 °C.**
+- [ ] **Trekk ned rullegardinene i treningsrommet.**
 - [ ] **Sett sauegjerdet tilbake** på plass (hindrer at sauene kommer opp på plattingen).
 - [ ] **Legg uteputene tilbake** der dere fant dem.
 - [ ] **Skru av alt innelys**

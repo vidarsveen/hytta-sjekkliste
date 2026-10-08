@@ -47,8 +47,7 @@
 - Koble til **Bluetooth-høyttalerne** i taket.
 - **Viften** styres av en av de to små knappene på veggbryteren (bryteren er delt i to).
 - Du kan gjerne **åpne døra**, men **sørg for at den er festet** – ellers kan vinden ta tak og slå den igjen.
-- Vær litt forsiktig – det er **første gang gymmen brukes etter montering**, så følg litt med.
-- **Viktig regel på kabeltårnet: dra aldri noe mot ansiktet.**
+- **Viktig regel på kabeltårnet: dra aldri noe tungt mot ansiktet.**
 
 ### Badstue
 - Knappen **nærmest deg** er en **timer/klokke** – den teller ned og må stå nær null. Ovnen kan kun skrus på de **siste to timene**.

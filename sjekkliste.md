@@ -25,12 +25,19 @@
 ## ℹ️ Nyttig å vite mens du er på hytta
 
 ### Aktiviteter
-- **Disc golf**, **krokket** og **oppblåsbare kajakker** er tilgjengelig – bare til å bruke.
+- **Disc golf**, **krokket** og **oppblåsbare kajakker** er tilgjengelig – bare å bruke.
+- **Discgolfbane:** Den nye discgolfbanen ligger ved parkeringsplassen noen hundre meter nord for hotellet, der vi pleier å gå på ski. Banen har 9 hull, med rød og blå layout.
 - **Bading i elva:** Ca. **10–20 meter etter krysset ved veien opp til Strangsetra (eneste kryss på veien til hytta)** går du ned til elva i et område som er lett tilgjengelig og videre **oppover (mot strømmen)**. Der åpner det seg et **større område med mindre strøm** som er fint å bade i.
 
 ### Ved / peis
 - Dere kan bruke **veden som ligger på terrassen**.
+- Bruk tennbriketter eller de små, hvite opptenningsposene (parafinposer) som ligger inne, til venstre for peisen.
 - Tips: For å få ekstra luft når dere tenner opp, kan dere **trekke ut skuffen under peisen littegrann**. **Dytt den tilbake når ilden har fått godt tak og peisen brenner ordentlig.**
+
+### Bålpanne
+- Legg **3–4 vedkubber** i bålpanna.
+- Bruk tennbriketter eller de små, hvite opptenningsposene (parafinposer) som ligger inne, til venstre for peisen.
+- Legg noen av dem mellom vedkubbene og tenn på.
 
 ### Elbil
 - **Elbillader** finnes ved inngangen. Husk at dere må ha med **egen ladeledning** hjemmefra.

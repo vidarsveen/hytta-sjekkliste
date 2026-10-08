@@ -30,7 +30,7 @@
 
 ### Ved / peis
 - Dere kan bruke **veden som ligger på terrassen**.
-- Tips: for å få mer luft/trekk når dere fyrer, kan dere **trekke ut skuffen under peisen littegrann**.
+- Tips: For å få ekstra luft når dere tenner opp, kan dere **trekke ut skuffen under peisen littegrann**. **Dytt den tilbake når ilden har fått godt tak og peisen brenner ordentlig.**
 
 ### Elbil
 - **Elbillader** finnes ved inngangen. Husk at dere må ha med **egen ladeledning** hjemmefra.

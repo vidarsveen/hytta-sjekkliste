@@ -5,6 +5,20 @@ const boxes = [...document.querySelectorAll('input[type=checkbox][data-key]')];
 let state = {};
 let storageAvailable = true;
 let undoSnapshot = null;
+let resetToastTimer = null;
+
+function dismissResetToast() {
+  clearTimeout(resetToastTimer);
+  resetToastTimer = null;
+  undoSnapshot = null;
+  const toast = document.getElementById('toast');
+  if (toast.contains(document.activeElement)) {
+    const focusTarget = document.querySelector('.panel.active [data-reset]')
+      || document.querySelector('.tab.active');
+    focusTarget.focus({ preventScroll: true });
+  }
+  toast.hidden = true;
+}
 
 try {
   const saved = JSON.parse(localStorage.getItem(LS) || '{}');
@@ -94,7 +108,9 @@ document.querySelectorAll('[data-reset]').forEach(button => {
     inputs.forEach(input => { input.checked = false; state[input.dataset.key] = false; });
     save();
     updateProgress();
+    clearTimeout(resetToastTimer);
     document.getElementById('toast').hidden = false;
+    resetToastTimer = setTimeout(dismissResetToast, 5000);
   });
 });
 document.getElementById('undo-reset').addEventListener('click', () => {
@@ -105,8 +121,7 @@ document.getElementById('undo-reset').addEventListener('click', () => {
     state[key] = checked || state[key] === true;
     boxes.find(box => box.dataset.key === key).checked = state[key];
   });
-  undoSnapshot = null;
-  document.getElementById('toast').hidden = true;
+  dismissResetToast();
   save();
   updateProgress();
   show(panel.id, true);

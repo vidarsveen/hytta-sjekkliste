@@ -60,6 +60,7 @@
 - Knappen **nærmest deg** er en **timer/klokke** – den teller ned og må stå nær null. Ovnen kan kun skrus på de **siste to timene**.
 - Knappen **lengst unna** styrer **temperaturen**.
 - Det står en **bøtte** der hvis du vil ha vann på ovnen.
+- Vil dere ha litt duft, finnes det også eteriske oljer. Bruk en olje beregnet for badstue, bland den i vannet etter doseringen på flasken, og hell vannet over steinene.
 
 ### Dusj / bad
 - Hvis vannet i dusjen ikke renner ned raskt nok: bruk den **grå flasken** til å løse opp ting som har satt seg fast (hell et par desilter ned i sluket inne i dusjkabinettet, vent 20 min, skru på dusjen å la det renne litt)

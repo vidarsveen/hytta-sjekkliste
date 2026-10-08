@@ -55,6 +55,7 @@
 - **Viften** styres av en av de to små knappene på veggbryteren (bryteren er delt i to).
 - Du kan gjerne **åpne døra**, men **sørg for at den er festet** – ellers kan vinden ta tak og slå den igjen.
 - **Viktig regel på kabeltårnet: dra aldri noe tungt mot ansiktet.**
+- **Husk å låse ytterdøra i treningsrommet hver kveld.**
 
 ### Badstue
 - Knappen **nærmest deg** er en **timer/klokke** – den teller ned og må stå nær null. Ovnen kan kun skrus på de **siste to timene**.
@@ -81,6 +82,6 @@
 - [ ] **Ta med søppelet** – kastes på gjenvinningsstasjonen, **første til venstre etter Synnfjellporten** på vei hjem.
 - [ ] **Støvsug.**
 - [ ] **Lukka alle dører inne med unntak av de to soveromsdørene (de to nærmeste når man står utenfor badet).**
-- [ ] **Lås alle dører.**
+- [ ] **Lås alle ytterdører, inkludert døra i treningsrommet.**
 - [ ] **Legg alle nøkler tilbake** i nøkkelskapet inne.
 - [ ] **Skru av utelyset** i Plejd-appen.

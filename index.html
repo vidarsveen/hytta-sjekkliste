@@ -3,250 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <meta name="theme-color" content="#3f6d4e">
+  <meta name="theme-color" content="#254b3e">
+  <meta name="description" content="Familiens sjekkliste når vi kommer til hytta og når vi drar hjem.">
   <title>Sjekkliste for hytta</title>
-  <style>
-    :root {
-      --bg: #f6f4ee;
-      --card: #ffffff;
-      --ink: #23271f;
-      --muted: #6b7263;
-      --accent: #3f6d4e;
-      --accent-soft: #e5efe6;
-      --line: #e4e1d7;
-      --shadow: 0 2px 10px rgba(0,0,0,.06);
-    }
-    @media (prefers-color-scheme: dark) {
-      :root {
-        --bg: #17190f;
-        --card: #22261a;
-        --ink: #ecefe2;
-        --muted: #9aa08c;
-        --accent: #7fb98e;
-        --accent-soft: #2c3324;
-        --line: #333827;
-        --shadow: 0 2px 12px rgba(0,0,0,.4);
-      }
-    }
-    * { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-    body {
-      margin: 0;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      background: var(--bg);
-      color: var(--ink);
-      line-height: 1.5;
-      -webkit-font-smoothing: antialiased;
-    }
-    header {
-      padding: calc(env(safe-area-inset-top) + 22px) 20px 16px;
-      background: var(--accent);
-      color: #fff;
-      text-align: center;
-    }
-    @media (prefers-color-scheme: dark) {
-      header { color: #0f1108; }
-    }
-    header h1 { margin: 0; font-size: 1.5rem; letter-spacing: .2px; }
-    header p { margin: 4px 0 0; font-size: .9rem; opacity: .85; }
-
-    .tabs {
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      display: flex;
-      background: var(--card);
-      border-bottom: 1px solid var(--line);
-      box-shadow: var(--shadow);
-    }
-    .tab {
-      flex: 1;
-      appearance: none;
-      border: 0;
-      background: none;
-      padding: 14px 6px;
-      font-size: .92rem;
-      font-weight: 600;
-      color: var(--muted);
-      cursor: pointer;
-      border-bottom: 3px solid transparent;
-      transition: color .15s, border-color .15s;
-    }
-    .tab.active { color: var(--accent); border-bottom-color: var(--accent); }
-
-    main { max-width: 720px; margin: 0 auto; padding: 18px 16px 60px; }
-    .panel { display: none; }
-    .panel.active { display: block; animation: fade .2s ease; }
-    @keyframes fade { from { opacity: 0; transform: translateY(4px);} to {opacity:1; transform:none;} }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      padding: 6px 16px;
-      margin: 0 0 16px;
-      box-shadow: var(--shadow);
-    }
-    h2.sec {
-      font-size: 1.05rem;
-      margin: 18px 4px 8px;
-      color: var(--accent);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .card h3 { font-size: 1rem; margin: 14px 0 6px; }
-    .card p, .card ul { margin: 6px 0; }
-    .card ul { padding-left: 20px; }
-    .card li { margin: 4px 0; }
-    .note { color: var(--muted); font-size: .9rem; }
-
-    /* checklist */
-    .check {
-      display: flex;
-      align-items: flex-start;
-      gap: 12px;
-      padding: 12px 4px;
-      border-bottom: 1px solid var(--line);
-      cursor: pointer;
-    }
-    .check:last-child { border-bottom: 0; }
-    .check input {
-      appearance: none;
-      flex: 0 0 auto;
-      width: 24px; height: 24px;
-      margin: 1px 0 0;
-      border: 2px solid var(--muted);
-      border-radius: 7px;
-      cursor: pointer;
-      position: relative;
-      transition: background .15s, border-color .15s;
-    }
-    .check input:checked { background: var(--accent); border-color: var(--accent); }
-    .check input:checked::after {
-      content: "";
-      position: absolute;
-      left: 7px; top: 3px;
-      width: 6px; height: 11px;
-      border: solid #fff;
-      border-width: 0 3px 3px 0;
-      transform: rotate(45deg);
-    }
-    @media (prefers-color-scheme: dark) {
-      .check input:checked::after { border-color: #0f1108; }
-    }
-    .check .txt { flex: 1; }
-    .check input:checked ~ .txt { color: var(--muted); text-decoration: line-through; }
-    .check .sub {
-      display: block;
-      margin-top: 4px;
-      font-size: .88rem;
-      color: var(--muted);
-      text-decoration: none;
-    }
-    .check input:checked ~ .txt .sub { text-decoration: line-through; }
-
-    .toolbar { display: flex; justify-content: space-between; align-items: center; margin: 4px 4px 10px; }
-    .progress { font-size: .85rem; color: var(--muted); }
-    .reset {
-      appearance: none; border: 1px solid var(--line); background: var(--card);
-      color: var(--muted); border-radius: 20px; padding: 6px 14px; font-size: .82rem; cursor: pointer;
-    }
-    .reset:active { background: var(--accent-soft); }
-    .lead { color: var(--muted); font-size: .92rem; margin: 2px 4px 14px; }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
 </head>
 <body>
-  <header>
-    <h1>🏡 Sjekkliste for hytta</h1>
-    <p>Ankomst · Nyttig å vite · Avreise</p>
+  <a class="skip-link" href="#main">Gå til sjekklisten</a>
+  <header class="site-header">
+    <a class="brand" href="./" aria-label="Hytta – forsiden"><svg viewBox="0 0 32 32" fill="none" aria-hidden="true"><path d="m4 15 12-10 12 10M7 13v14h18V13M13 27v-9h6v9M22 10V5"/></svg><span>hytta<span class="brand-dot">.</span></span></a>
+    <span class="header-note">Familiens huskeliste</span>
+    <span class="header-tag"><span></span> HYTTA VÅR</span>
   </header>
-
-  <nav class="tabs">
-    <button class="tab" data-tab="ankomst">✅ Ankomst</button>
-    <button class="tab active" data-tab="info">ℹ️ Nyttig å vite</button>
-    <button class="tab" data-tab="avreise">🚪 Avreise</button>
+  <div class="hero">
+    <div class="hero-copy"><h1>Sjekkliste<br>for hytta</h1><p>For oss når vi kommer til hytta,<br class="desktop-break"> og når vi drar hjem.</p></div>
+    <div class="hero-art"><img src="cabin.svg" alt="Illustrasjon av en liten hytte mellom grantrær og fjell" width="680" height="420"></div>
+  </div>
+  <nav class="tabs" role="tablist" aria-label="Hytteguide">
+    <button class="tab active" id="tab-ankomst" data-tab="ankomst" role="tab" aria-selected="true" aria-controls="ankomst"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h14V9M9 21v-8h6v8"/></svg><span>Ankomst</span><span class="tab-count" data-tab-count="ankomst">0/7</span></button>
+    <button class="tab" id="tab-info" data-tab="info" role="tab" aria-selected="false" aria-controls="info" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21V5M12 5C8 2 4 3 2 4v15c4-2 7-1 10 2 3-3 6-4 10-2V4c-2-1-6-2-10 1Z"/></svg><span>Nyttig å vite</span></button>
+    <button class="tab" id="tab-avreise" data-tab="avreise" role="tab" aria-selected="false" aria-controls="avreise" tabindex="-1"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 21H4V3h6M13 7l5 5-5 5M8 12h13"/></svg><span>Avreise</span><span class="tab-count" data-tab-count="avreise">0/16</span></button>
   </nav>
+  <div class="page-layout">
+  <main id="main">
 
-  <main>
     <!-- ANKOMST -->
-    <section class="panel" id="ankomst">
-      <div class="toolbar">
-        <span class="progress" data-progress="ankomst"></span>
-        <button class="reset" data-reset="ankomst">Nullstill</button>
+    <section class="panel active" id="ankomst" role="tabpanel" aria-labelledby="tab-ankomst" tabindex="0">
+      <div class="section-intro"><div><h2>Når vi kommer</h2><p>Dette må vi huske før vi drar og når vi kommer frem.</p></div></div>
+      <div class="progress-card">
+        <div class="toolbar"><span class="progress" data-progress="ankomst" aria-live="polite"></span><button class="reset" data-reset="ankomst">Start på nytt <span aria-hidden="true">↺</span></button></div>
+        <progress data-meter="ankomst" max="7" value="0" aria-label="Fremdrift for ankomst"></progress>
+        <p class="progress-hint" data-hint="ankomst">Kryss av etter hvert.</p>
       </div>
 
-      <h2 class="sec">🧳 Før avreise (hjemmefra)</h2>
+      <h2 class="sec"><span class="section-number">01</span> Før du drar hjemmefra <span class="group-count"></span></h2>
       <div class="card">
-        <label class="check"><input type="checkbox" data-key="ank-key">
-          <span class="txt">Husk nøkkelen til hytta
-            <span class="sub">Hvis man glemmer denne, finnes det en nøkkelboks med reservenøkkel (kode fås ved behov).</span>
-          </span></label>
-        <label class="check"><input type="checkbox" data-key="ank-mill">
-          <span class="txt">Ring pappa/mamma for å be dem skru på varmen på Mill-ovnene.</span></label>
-        <label class="check"><input type="checkbox" data-key="ank-lad">
-          <span class="txt">Ta med ladeledning hjemmefra hvis dere bruker elbil.</span></label>
+        <label class="check"><input type="checkbox" data-key="ank-key"><span class="txt"><span class="task-title">Husk nøkkelen</span></span></label>
+        <label class="check"><input type="checkbox" data-key="ank-mill"><span class="txt"><span class="task-title">Be om en varm hytte</span><span class="sub">Ring pappa/mamma for å be dem skru på varmen på Mill-ovnene.</span></span></label>
+        <label class="check"><input type="checkbox" data-key="ank-lad"><span class="txt"><span class="task-title">Pakk ladeledningen</span><span class="sub">Ta med ladeledning hjemmefra hvis dere bruker elbil.</span></span></label>
       </div>
 
-      <h2 class="sec">🏡 Ved ankomst</h2>
+      <h2 class="sec"><span class="section-number">02</span> Når du kommer frem <span class="group-count"></span></h2>
       <div class="card">
-        <label class="check"><input type="checkbox" data-key="ank-lys">
-          <span class="txt">Skru på utelys via Plejd-appen.
-            <span class="sub">Appen kan installeres mens du er på hytta.</span>
-          </span></label>
-        <label class="check"><input type="checkbox" data-key="ank-vann">
-          <span class="txt">Skru på vannet – den blå hendelen i rommet rett til venstre etter inngangsdøren.
-            <span class="sub">Snu 90 grader slik at den peker langs vannrøret.</span>
-          </span></label>
-        <label class="check"><input type="checkbox" data-key="ank-kam">
-          <span class="txt">Koble fra kameraene.
-            <span class="sub">De to kameraene i stua, og kameraet på det ene soverommet oppe. Kameraet på kontoret kan stå på, men kan skrus av hvis rommet brukes (det peker uansett ut av vinduet).</span>
-          </span></label>
-        <label class="check"><input type="checkbox" data-key="ank-gulv">
-          <span class="txt">Skru på gulvvarmen på badet til 30 °C.</span></label>
+        <div class="task-with-links"><label class="check"><input type="checkbox" data-key="ank-lys"><span class="txt"><span class="task-title">Skru på utelyset</span><span class="sub">Bruk Plejd-appen. Appen kan installeres mens du er på hytta.</span></span></label><div class="app-links" aria-label="Last ned Plejd"><a href="https://apps.apple.com/no/app/plejd/id1032689423" target="_blank" rel="noopener noreferrer">Plejd i App Store ↗</a><a href="https://play.google.com/store/apps/details?id=com.plejd.plejdapp" target="_blank" rel="noopener noreferrer">Plejd på Google Play ↗</a></div></div>
+        <label class="check"><input type="checkbox" data-key="ank-vann"><span class="txt"><span class="task-title">Åpne for vannet</span><span class="sub">Den blå hendelen er i rommet rett til venstre etter inngangsdøren. Snu 90 grader slik at den peker langs vannrøret.</span></span></label>
+        <label class="check"><input type="checkbox" data-key="ank-kam"><span class="txt"><span class="task-title">Koble fra kameraene</span><span class="sub">De to kameraene i stua, og kameraet på det ene soverommet oppe. Kameraet på kontoret kan stå på, men kan skrus av hvis rommet brukes (det peker uansett ut av vinduet).</span></span></label>
+        <label class="check"><input type="checkbox" data-key="ank-gulv"><span class="txt"><span class="task-title">Still inn gulvvarmen</span>
+          <span class="sub"><strong>Badet med badstue: 30 °C.</strong> Dette er det viktigste. (Termostaten måler temperaturen i selve gulvet, i motsetning til på det andre badet. Derfor skal den stå på 30 °C.)</span>
+          <span class="sub"><strong>Det andre badet: 23 °C hvis det brukes.</strong> Som regel ikke nødvendig for en helg, men kan være nyttig i påsken og vinterferien.</span>
+          <span class="sub"><strong>Treningsrommet: 23 °C.</strong></span>
+          <span class="sub"><strong>Steingulvet på kjøkkenet og i inngangen: 25 °C ved behov.</strong> Gulvvarmen i stuene og soverommene er vanligvis av.</span>
+        </span></label>
       </div>
     </section>
 
     <!-- INFO -->
-    <section class="panel active" id="info">
-      <p class="lead">Ting som er greit å vite mens dere er på hytta.</p>
+    <section class="panel" id="info" role="tabpanel" aria-labelledby="tab-info" tabindex="0" hidden>
+      <div class="section-intro"><h2>Nyttig å vite</h2><p>Her finner dere tips og forklaringer til ting på hytta.</p></div>
 
-      <h2 class="sec">🎯 Aktiviteter</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🎯 Aktiviteter<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <p><strong>Disc golf</strong>, <strong>krokket</strong> og <strong>oppblåsbare kajakker</strong> er tilgjengelig – bare til å bruke.</p>
         <p><strong>Bading i elva:</strong> Ca. 10–20 meter etter krysset ved veien opp til Strangsetra (eneste kryss på veien til hytta) går du ned til elva i et område som er lett tilgjengelig, og videre oppover (mot strømmen). Der åpner det seg et større område med mindre strøm som er fint å bade i.</p>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🔥 Ved / peis</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🔥 Ved / peis<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Dere kan bruke veden som ligger på terrassen.</li>
           <li>Tips: for å få mer luft/trekk når dere fyrer, kan dere trekke ut skuffen under peisen littegrann.</li>
         </ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🔌 Elbil</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🔌 Elbil<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul><li>Elbillader finnes ved inngangen. Husk at dere må ha med egen ladeledning hjemmefra.</li></ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🍕 Grill / pizzaovn</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🍕 Grill / pizzaovn<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Gass til pizzaovnen/grillen står ute – bare koble til.</li>
           <li><strong>Etter bruk: demonter gassen helt</strong> – ikke bare skru av knappen.</li>
         </ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🛋️ Uteplass</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🛋️ Uteplass<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Ta gjerne putene fra sofaen i stua hvis du vil bruke sofaen ute.</li>
           <li><strong>Legg alt tilbake før avreise.</strong></li>
         </ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🏋️ Treningsrom</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🏋️ Treningsrom<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Koble til Bluetooth-høyttalerne i taket.</li>
           <li>Viften styres av en av de to små knappene på veggbryteren (bryteren er delt i to).</li>
@@ -254,33 +100,33 @@
           <li>Vær litt forsiktig – det er første gang gymmen brukes etter montering, så følg litt med.</li>
           <li><strong>Viktig regel på kabeltårnet: dra aldri noe mot ansiktet.</strong></li>
         </ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🧖 Badstue</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🧖 Badstue<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Knappen nærmest deg er en timer/klokke – den teller ned og må stå nær null. Ovnen kan kun skrus på de siste to timene.</li>
           <li>Knappen lengst unna styrer temperaturen.</li>
           <li>Det står en bøtte der hvis du vil ha vann på ovnen.</li>
         </ul>
-      </div>
+      </div></details>
 
-      <h2 class="sec">🚿 Dusj / bad</h2>
-      <div class="card">
+      <details class="guide-card"><summary>🚿 Dusj / bad<span class="disclosure" aria-hidden="true">+</span></summary><div class="guide-content">
         <ul>
           <li>Hvis vannet i dusjen ikke renner ned raskt nok: bruk den grå flasken til å løse opp ting som har satt seg fast. Hell et par desiliter ned i sluket inne i dusjkabinettet, vent 20 min, skru på dusjen og la det renne litt.</li>
         </ul>
-      </div>
+      </div></details>
     </section>
 
     <!-- AVREISE -->
-    <section class="panel" id="avreise">
-      <div class="toolbar">
-        <span class="progress" data-progress="avreise"></span>
-        <button class="reset" data-reset="avreise">Nullstill</button>
+    <section class="panel" id="avreise" role="tabpanel" aria-labelledby="tab-avreise" tabindex="0" hidden>
+      <div class="section-intro"><div><h2>Før vi drar hjem</h2><p>Sjekk disse punktene før dere reiser.</p></div></div>
+      <div class="progress-card">
+        <div class="toolbar"><span class="progress" data-progress="avreise" aria-live="polite"></span><button class="reset" data-reset="avreise">Start på nytt <span aria-hidden="true">↺</span></button></div>
+        <progress data-meter="avreise" max="16" value="0" aria-label="Fremdrift for avreise"></progress>
+        <p class="progress-hint" data-hint="avreise">Kryss av etter hvert.</p>
       </div>
 
-      <h2 class="sec">🚪 Ved avreise</h2>
+      <h2 class="sec"><span class="section-number">01</span> Før du låser døra <span class="group-count"></span></h2>
       <div class="card">
         <label class="check"><input type="checkbox" data-key="avr-vann">
           <span class="txt">Skru av vannet – den blå hendelen skal stå i 90° vinkel i forhold til rørretningen.
@@ -323,56 +169,12 @@
       </div>
     </section>
   </main>
-
-  <script>
-    const LS = "hytta-sjekkliste-v1";
-    const state = JSON.parse(localStorage.getItem(LS) || "{}");
-
-    // tabs
-    const tabs = document.querySelectorAll(".tab");
-    const panels = document.querySelectorAll(".panel");
-    function show(id) {
-      tabs.forEach(t => t.classList.toggle("active", t.dataset.tab === id));
-      panels.forEach(p => p.classList.toggle("active", p.id === id));
-      try { localStorage.setItem(LS + "-tab", id); } catch(e) {}
-    }
-    tabs.forEach(t => t.addEventListener("click", () => show(t.dataset.tab)));
-    const lastTab = localStorage.getItem(LS + "-tab");
-    if (lastTab) show(lastTab);
-
-    // checkboxes
-    const boxes = document.querySelectorAll("input[type=checkbox][data-key]");
-    boxes.forEach(b => {
-      if (state[b.dataset.key]) b.checked = true;
-      b.addEventListener("change", () => {
-        state[b.dataset.key] = b.checked;
-        localStorage.setItem(LS, JSON.stringify(state));
-        updateProgress();
-      });
-    });
-
-    function updateProgress() {
-      ["ankomst", "avreise"].forEach(id => {
-        const el = document.querySelector(`[data-progress="${id}"]`);
-        const inputs = document.querySelectorAll(`#${id} input[type=checkbox]`);
-        const done = [...inputs].filter(i => i.checked).length;
-        el.textContent = `${done} av ${inputs.length} gjort`;
-      });
-    }
-    updateProgress();
-
-    // reset
-    document.querySelectorAll("[data-reset]").forEach(btn => {
-      btn.addEventListener("click", () => {
-        const id = btn.dataset.reset;
-        document.querySelectorAll(`#${id} input[type=checkbox]`).forEach(i => {
-          i.checked = false;
-          state[i.dataset.key] = false;
-        });
-        localStorage.setItem(LS, JSON.stringify(state));
-        updateProgress();
-      });
-    });
-  </script>
+  <aside class="sidebar" aria-label="Tips til oppholdet">
+    <div class="welcome-note"><span class="eyebrow">HUSKELISTA</span><svg class="cup" viewBox="0 0 64 64" fill="none" aria-hidden="true"><path d="M16 27h29v14a14 14 0 0 1-29 0V27ZM45 29h5a7 7 0 0 1 0 14h-5M10 57h43M25 19c-8-8 8-8 0-16M36 19c-8-8 8-8 0-16"/></svg><h2>Kryss av etter hvert</h2><p>Trykk på punktene når de er gjort. Bruk «Start på nytt» når dere er klare for neste tur.</p><div class="note-divider"></div><span class="save-note" id="save-note"><span aria-hidden="true">✓</span> Avkrysningene lagres på denne enheten.</span></div>
+    <div class="quick-guide"><h2>Snarveier</h2><button data-guide="Badstue"><span class="quick-icon" aria-hidden="true">♨</span><span>Badstue<small>Slik bruker dere ovnen</small></span><span aria-hidden="true">↗</span></button><button data-guide="Aktiviteter"><span class="quick-icon" aria-hidden="true">↟</span><span>Aktiviteter<small>Bading, kajakker og spill</small></span><span aria-hidden="true">↗</span></button><button data-guide="Ved / peis"><span class="quick-icon" aria-hidden="true">☷</span><span>Ved og peis<small>Hvor veden ligger og tips til fyring</small></span><span aria-hidden="true">↗</span></button></div>
+  </aside>
+  </div>
+  <footer class="site-footer"><span class="footer-brand">hytta.</span><span>Familiens sjekkliste</span><span aria-hidden="true">↟ ↟ ↟</span></footer>
+  <div class="toast" id="toast" role="status" hidden><span>Sjekklisten er nullstilt.</span><button id="undo-reset">Angre</button></div>
 </body>
 </html>

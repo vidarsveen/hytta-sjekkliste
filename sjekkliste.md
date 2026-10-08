@@ -10,7 +10,6 @@
 
 ## 🏡 Ved ankomst
 
-- [ ] **Skru på utelys** via **Plejd-appen** (appen kan installeres mens du er på hytta). [App Store](https://apps.apple.com/no/app/plejd/id1032689423) · [Google Play](https://play.google.com/store/apps/details?id=com.plejd.plejdapp)
 - [ ] **Skru på vannet** – den **blå hendelen** i rommet rett til venstre etter inngangsdøren snu 90 grader slik at den peker langs vannrøret.
 - [ ] **Koble fra kameraene**:
   - De to kameraene i stua.
@@ -20,7 +19,8 @@
   - **Badet med badstue: 30 °C.** Dette er det viktigste. (Termostaten måler temperaturen i selve gulvet, i motsetning til på det andre badet. Derfor skal den stå på 30 °C.)
   - **Det andre badet: 23 °C hvis det brukes.** Som regel ikke nødvendig for en helg, men kan være nyttig i påsken og vinterferien.
   - **Treningsrommet: 23 °C.**
-  - **Steingulvet på kjøkkenet og i inngangen: 25 °C ved behov.** Gulvvarmen i stuene og soverommene er vanligvis av.
+  - **Steingulvet på kjøkkenet og i inngangen: 23 °C ved behov.** Gulvvarmen i stuene og soverommene er vanligvis av.
+- [ ] **Skru på utelys** via **Plejd-appen** (appen kan installeres mens du er på hytta). [App Store](https://apps.apple.com/no/app/plejd/id1032689423) · [Google Play](https://play.google.com/store/apps/details?id=com.plejd.plejdapp)
 
 ## ℹ️ Nyttig å vite mens du er på hytta
 

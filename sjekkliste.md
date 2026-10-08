@@ -74,7 +74,7 @@
 - [ ] **Sett alle veggmonterte ovner manuelt til 5 °C.**
 - [ ] **Sett gulvvarmen på badene tilbake til 10 °C.**
 - [ ] **Trekk ned rullegardinene i treningsrommet.**
-- [ ] **Sett sauegjerdet tilbake** på plass (hindrer at sauene kommer opp på plattingen).
+- [ ] **Sett sauegjerdet tilbake på plass i sommersesongen (mai–september).** Hindrer at sauene kommer opp på plattingen. Ikke nødvendig fra oktober til og med april.
 - [ ] **Legg uteputene tilbake** der dere fant dem.
 - [ ] **Skru av alt innelys**
 - [ ] **Lukk dørene til badet.**

@@ -44,6 +44,7 @@
 
 ### Grill / pizzaovn
 - Gass til pizzaovnen/grillen står ute – bare koble til.
+- **Tom for gass?** Dere kan kjøpe gass på den lokale Joker-butikken.
 - **Etter bruk: demonter gassen helt** – ikke bare skru av knappen.
 
 ### Uteplass
